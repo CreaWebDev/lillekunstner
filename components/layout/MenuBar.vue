@@ -21,8 +21,7 @@ import { ref } from 'vue'
 const menuButtons = ref([
   { id: 1, title: 'Galleri', linkTo: '/gallery', icon: '/images/buttons/rose.svg'},
   { id: 2, title: 'Årstider',  linkTo: '/seasons', icon: '/images/buttons/xmas.svg'},
-  { id: 3, title: 'Produkter',  linkTo: '/products', icon: '/images/buttons/face.svg'},
-  { id: 4, title: 'Køb',  linkTo: '/basket', icon: '/images/buttons/basket.svg'},
-  { id: 5, title: 'Kontakt',  linkTo: '/about', icon: '/images/buttons/bird.svg'}
+  { id: 3, title: 'Bestil',  linkTo: '/basket', icon: '/images/buttons/basket.svg'},
+  { id: 4, title: 'Kontakt',  linkTo: '/about', icon: '/images/buttons/bird.svg'}
 ])
 </script>
