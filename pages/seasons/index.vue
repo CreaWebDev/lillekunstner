@@ -3,56 +3,52 @@
     <div class="px-4 py-8 text-center">
       <h1 class="text-3xl font-bold trailing-wide mb-4 font-display">Jul</h1>
       <p class="mb-4">Nu bliver det snart julet</p>
-      <img src="/images/buttons/xmas.svg" alt="Christmas Banner" class="w-40 h-auto my-6 mx-auto" />
 
-      <!-- Countdown to December 1st -->
-      <div class="mt-10">
-        
-        <h2 class="text-2xl font-display font-medium mb-3">Countdown til 1. december</h2>
-        
-        <div class="flex justify-center gap-3">
-          <OrganicBtn
-            :fillColor="'fill-lavender'"
-            :addClass="'w-20'"
-          >
-            <div class="flex flex-col items-center px-3 py-2">
-              <div class="text-2xl font-bold">{{ timeLeft.days }}</div>
-              <div class="text-xs text-dark">dage</div>
-            </div>
-          </OrganicBtn>
-
-          <OrganicBtn
-            :fillColor="'fill-green'"
-            :addClass="'w-20'"
-          >
-            <div class="flex flex-col items-center px-3 py-2">
-              <div class="text-2xl font-bold">{{ timeLeft.hours }}</div>
-              <div class="text-xs text-dark">timer</div>
-            </div>
-          </OrganicBtn>
-          <OrganicBtn
-            :fillColor="'fill-dark'"
-            :addClass="'w-20'"
-          >
+      <h2 class="text-2xl font-display font-medium mb-3">Countdown til 1. december</h2>
+      <div class="sr-only" aria-live="polite">{{ timeLeft.days }} dage, {{ timeLeft.hours }} timer, {{ timeLeft.minutes }} minutter og {{ timeLeft.seconds }} sekunder tilbage til 1. december.</div>
+      <div class="flex justify-center gap-3">
+        <OrganicBtn
+          :fillColor="'fill-lavender'"
+          :addClass="'w-20'"
+        >
           <div class="flex flex-col items-center px-3 py-2">
-            <div class="text-2xl text-green">{{ timeLeft.minutes }}</div>
-            <div class="text-xs text-soft">min</div>
+            <div class="text-2xl font-bold">{{ timeLeft.days }}</div>
+            <div class="text-xs text-dark">dage</div>
           </div>
-          </OrganicBtn>
+        </OrganicBtn>
 
-          <OrganicBtn
-            :fillColor="'fill-abricot'"
-            :addClass="'w-20'"
-          >
+        <OrganicBtn
+          :fillColor="'fill-green'"
+          :addClass="'w-20'"
+        >
           <div class="flex flex-col items-center px-3 py-2">
-            <div class="text-2xl font-bold">{{ timeLeft.seconds }}</div>
-            <div class="text-xs text-dark">sek</div>
+            <div class="text-2xl font-bold">{{ timeLeft.hours }}</div>
+            <div class="text-xs text-dark">timer</div>
           </div>
-          </OrganicBtn>
+        </OrganicBtn>
+        <OrganicBtn
+          :fillColor="'fill-dark'"
+          :addClass="'w-20'"
+        >
+        <div class="flex flex-col items-center px-3 py-2">
+          <div class="text-2xl text-green">{{ timeLeft.minutes }}</div>
+          <div class="text-xs text-soft">min</div>
         </div>
+        </OrganicBtn>
 
-        <div class="sr-only" aria-live="polite">{{ timeLeft.days }} dage, {{ timeLeft.hours }} timer, {{ timeLeft.minutes }} minutter og {{ timeLeft.seconds }} sekunder tilbage til 1. december.</div>
+        <OrganicBtn
+          :fillColor="'fill-abricot'"
+          :addClass="'w-20'"
+        >
+        <div class="flex flex-col items-center px-3 py-2">
+          <div class="text-2xl font-bold">{{ timeLeft.seconds }}</div>
+          <div class="text-xs text-dark">sek</div>
+        </div>
+        </OrganicBtn>
       </div>
+
+      <img src="/images/buttons/xmas.svg" alt="Christmas Banner" class="w-40 h-auto my-6 mx-auto" />
+      <SeasonGallery />
     </div>
   </div>
 </template>
@@ -60,6 +56,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import OrganicBtn from '~/components/ui/OrganicBtn.vue'
+import SeasonGallery from '~/components/seasons/SeasonsGallery.vue'
 
 useHead({
   title: 'Jul - Lillekunstner'
