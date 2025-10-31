@@ -54,6 +54,9 @@
 
     <section class="py-12 sm:py-16 md:py-20">
       <Process />      
+      <div class="p-10">
+        <img src="/images/gallery/fuglenet.jpg" class="rounded-md">
+      </div>
     </section>
   </div>
 </template>
