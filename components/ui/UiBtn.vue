@@ -58,11 +58,11 @@ const emits = defineEmits(['click'])
 const ariaLabel = computed(() => props.text || props.to || props.href || 'button')
 
 const buttonClass = computed(() => {
-  const base = 'inline-flex items-center justify-center gap-2 px-8 py-2 rounded-md text-xl font-medium transition-colors duration-150'
+  const base = 'inline-flex items-center justify-center gap-2 px-8 py-2 rounded-md text-lg font-medium transition-colors duration-150'
   const size = props.full ? 'w-full' : ''
   const variant = props.variant === 'secondary'
     ? 'bg-abricot text-soft hover:text-abricot hover:bg-lavender'
-    : 'bg-lavender text-white hover:opacity-95'
+    : 'bg-lavender text-dark hover:opacity-95'
   return [base, size, variant].filter(Boolean).join(' ')
 })
 
