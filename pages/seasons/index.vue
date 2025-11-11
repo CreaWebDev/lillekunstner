@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen">
     <div class="px-4 py-8 text-center">
-      <h1 class="text-3xl font-bold trailing-wide mb-4 font-display">Jul</h1>
-      <p class="mb-4">Nu bliver det snart julet</p>
+      <h1 class="text-3xl font-bold trailing-wide mb-4 font-display">Nu bliver det snart julet</h1>
+      <img src="/images/seasons/snekugle.svg" alt="Christmas Banner" class="w-2/3 md:w-1/3 h-auto my-6 mx-auto" />
 
       <h2 class="text-2xl font-display font-medium mb-3">Countdown til 1. december</h2>
       <div class="sr-only" aria-live="polite">{{ timeLeft.days }} dage, {{ timeLeft.hours }} timer, {{ timeLeft.minutes }} minutter og {{ timeLeft.seconds }} sekunder tilbage til 1. december.</div>
@@ -47,7 +47,7 @@
         </OrganicBtn>
       </div>
 
-      <img src="/images/buttons/xmas.svg" alt="Christmas Banner" class="w-40 h-auto my-6 mx-auto" />
+      
       <SeasonGallery />
     </div>
   </div>

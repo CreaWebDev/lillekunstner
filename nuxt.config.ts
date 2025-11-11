@@ -6,6 +6,26 @@ export default defineNuxtConfig({
   // Add the global Tailwind entry so Nuxt includes Tailwind CSS styles
   css: ['~/assets/css/tailwind.css'],
 
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com'
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: 'anonymous'
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap'
+        }
+      ]
+    }
+  },
+
   runtimeConfig: {
     // Server-side environment variables
     smtpHost: process.env.SMTP_HOST,

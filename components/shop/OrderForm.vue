@@ -1,6 +1,7 @@
 <template>
   <div class="order-form max-w-2xl mx-auto p-6">
-    <h2 class="text-lg italic mb-6">Hér kan du sende mig din bestilling. Jeg modtager den på mail og sender dig et preview af produktet inden afsendelse og betaling.</h2>
+    <!-- <h2 class="text-lg italic mb-6">Hér kan du sende mig din bestilling. Jeg modtager den på mail og sender dig et preview af produktet inden afsendelse og betaling.</h2> -->
+    <h2 class="text-lg italic mb-6">Jeg arbejder på højtryk for at gøre klar til bestillinger. Skriv evt til mig på pia@lillekunster.dk</h2>
     
     <form @submit.prevent="submitOrder" class="space-y-6">
       <!-- Contact Information -->

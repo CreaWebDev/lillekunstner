@@ -1,9 +1,9 @@
 <template>
   <div class="min-h-screen">
     <!-- Background Banner Image (animated panorama) -->
-    <section class="absolute bottom-10 inset-0 z-0 h-full pt-20">
+    <section class="absolute bottom-10  inset-0 z-0 h-full pt-20">
       <div
-        class="w-full h-full bg-center bg-cover bg-no-repeat animate-panorama"
+        class="w-full h-full md:h-2/3 bg-center bg-cover bg-no-repeat animate-panorama md:opacity-50"
         style="background-image: url('/images/banner_muh.png');"
         aria-hidden="true"
       ></div>
@@ -16,18 +16,18 @@
         <img
           src="/images/face.svg"
           alt="Lillekunstner Logo"
-          class="w-1/2 h-auto place-self-center"
+          class="w-1/2 md:w-44 h-auto mx-auto"
         />
         <p class="text-dark font-display text-6xl mb-6 px-4">
           Vidste du ikke,<br>at du har en lille kunstner derhjemme?
         </p>
         <img
           src="/images/org_btn.svg"
-          class="w-1/5 h-auto place-self-center mx-auto"  
+          class="w-1/5 md:w-40 h-auto place-self-center mx-auto"  
         />
       </div>
     </section>
-    <section class="relative flex flex-col text-dark text-center font-display px-12">
+    <section class="relative flex flex-col text-dark text-center font-display px-12 md:px-44">
       <p class="text-7xl py-4">
         Jeg har to!
       </p>
