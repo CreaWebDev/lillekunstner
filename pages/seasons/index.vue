@@ -1,11 +1,13 @@
 <template>
   <div class="min-h-screen">
     <div class="px-4 py-8 text-center">
-      <h1 class="text-3xl font-bold trailing-wide mb-4 font-display">Nu bliver det snart julet</h1>
       <img src="/images/seasons/snekugle.svg" alt="Christmas Banner" class="w-2/3 md:w-1/3 h-auto my-6 mx-auto" />
+      
+      <h1 class="text-3xl font-bold trailing-wide mb-6 font-display">Countdown til 24. december:</h1>
+      <div class="sr-only" aria-live="polite">
+        {{ timeLeft.days }} dage, {{ timeLeft.hours }} timer, {{ timeLeft.minutes }} minutter og {{ timeLeft.seconds }} sekunder tilbage til 24. december.
+      </div>
 
-      <h2 class="text-2xl font-display font-medium mb-3">Countdown til 1. december</h2>
-      <div class="sr-only" aria-live="polite">{{ timeLeft.days }} dage, {{ timeLeft.hours }} timer, {{ timeLeft.minutes }} minutter og {{ timeLeft.seconds }} sekunder tilbage til 1. december.</div>
       <div class="flex justify-center gap-3">
         <OrganicBtn
           :fillColor="'fill-lavender'"
@@ -62,12 +64,20 @@ useHead({
   title: 'Jul - Lillekunstner'
 })
 
-// Compute next Dec 1st (this year or next if already passed)
-function getNextDec1(): Date {
+// function getNextDec1(): Date {
+//   const now = new Date()
+//   let target = new Date(now.getFullYear(), 11, 1, 0, 0, 0)
+//   if (now >= target) {
+//     target = new Date(now.getFullYear() + 1, 11, 1, 0, 0, 0)
+//   }
+//   return target
+// }
+
+function getNextDec24(): Date {
   const now = new Date()
-  let target = new Date(now.getFullYear(), 11, 1, 0, 0, 0)
+  let target = new Date(now.getFullYear(), 11, 24, 0, 0, 0) // 11 = december
   if (now >= target) {
-    target = new Date(now.getFullYear() + 1, 11, 1, 0, 0, 0)
+    target = new Date(now.getFullYear() + 1, 11, 24, 0, 0, 0)
   }
   return target
 }
@@ -78,13 +88,15 @@ let timer: ReturnType<typeof setInterval> | null = null
 
 function updateCountdown() {
   const now = new Date()
-  const target = getNextDec1()
+  const target = getNextDec24()
   let diff = Math.max(0, target.getTime() - now.getTime())
+
   const totalSeconds = Math.floor(diff / 1000)
   const days = Math.floor(totalSeconds / (3600 * 24))
   const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600)
   const minutes = Math.floor((totalSeconds % 3600) / 60)
   const seconds = totalSeconds % 60
+
   timeLeft.value = { days, hours, minutes, seconds }
 }
 
